@@ -2,7 +2,7 @@ import os, shutil
 
 source = r'C:\Users\Michael\Documents\MMEX_DB'
 cloud_backup = r'C:\Users\Michael\Dropbox\Money_Manager_DB'
-pendrive_backup = r'I:\MMEX_DB'
+pendrive_backup = r'J:\MMEX_DB'
 
 log = []
 def backup (source, destination):
@@ -11,13 +11,13 @@ def backup (source, destination):
         shutil.copytree(source, destination)
         print(f"Directory copied to {destination}")
     except:
-        print(f"Directory {destination} already exists! Instead - "
+        print(f"Directory {destination} already exists!\nInstead - "
               f"the files from the {source} directory will be modified!")
         for file in files:
             file_path = os.path.join(source, file)
             shutil.copy(file_path, destination)
             log.append(file)
-        print(log)
+            print(log[-1])
 
 if __name__ == '__main__':
     if os.path.exists(pendrive_backup.split('\\')[0]):

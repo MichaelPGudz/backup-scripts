@@ -3,7 +3,7 @@ import os, shutil
 source = r'C:\Users\Michael\Documents\Accounts_Passes.kdbx'
 file_name = source.split('\\')[-1]
 cloud_backup = r'C:\Users\Michael\Dropbox\Backup'
-pendrive_backup = r'I:'
+pendrive_backup = r'J:'
 
 def backup (source, destination):
     if not os.path.exists(destination):
